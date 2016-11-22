@@ -1,0 +1,19 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:9393"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:9.6.1
+    environment:
+      POSTGRES_PASSWORD: gitrob
+      POSTGRES_USER: gitrob
+      POSTGRES_DB: gitrob
+
+
+
